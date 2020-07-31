@@ -1,0 +1,1 @@
+console.log(""); /* Não é função! é um método que chama log que esta dentro do objeto console*//* Ponto e virgula é opcional no fim de cada linha*/
