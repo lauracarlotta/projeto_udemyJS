@@ -1,1 +1,14 @@
-console.log(""); /* Não é função! é um método que chama log que esta dentro do objeto console*//* Ponto e virgula é opcional no fim de cada linha*/
+console.log(""); => Dentro do parenteses podemos colocar uma variável, objeto, valores literais, etc /* Não é função! é um método que chama log que esta dentro do objeto console*//* Ponto e virgula é opcional no fim de cada linha*/
+console.log('Primeira aula prática'); => Para poder colocar um texto entre aspas eu deveria deixa-lo dessa forma: - console.log("Laura 'Carlota'") <= e nesse caso "Carlota" estará entre aspas simples e vice-versa. /* Para printar coisas na tela */
+console.log("Verificando como ficam as aspas simples e dulpas");
+console.log(`Verificando a 3ª possibilidade que é usando as crases!`); => template strings (avançado) podendo nele usar tanto aspas duplas e aspas simples, pois aqui não quebramos a regra do motor do JS
+
+=> sempre que quisermos printar alguma coisa na tela ou debugar alguma outra coisa, usaremos essa "função" : console.log. Porém a mesma só é exibida no console.
+
+
+tudo o que é colocado entre aspas duplas, simples ou crases são as STRINGS
+JS é uma linguagem de tipagem dinâmica;
+
+- strings = texto ou cadeia de caracteres
+- number = número - no JS não tem a diferença entre numeros inteiros ou reias (em outras linguagens isso poderia ser representado como int e float)
+- 
