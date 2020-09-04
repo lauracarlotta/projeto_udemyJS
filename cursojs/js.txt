@@ -89,11 +89,74 @@ JS é uma linguagem de tipagem dinâmica;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
+		*** Variáveis com let ***
 	
 	
+Variáveis = espaço de armazenamento na memória
+
+Pode ser modificado ao longo do código.
+
+(var ou let) 
+
+	let nome = "Laura"
+
+Uma vez declarada a variável é possivel modificá-la ao longo do código. Contudo não podemos redeclará-la, por exemplo:
+
+	let nome = "Maria"  <- Aqui daria um erro pois essa variável já foi declarada. Agora só podemos modificá-la, assim:>
+	
+	nome = "Joana"
 	
 	
+	[REGRAS NA DECLARAÇÃO DE VARIÁVEIS]
 	
+		1 - Não podemos criar variáveis com palavras reservadas: let if, let function, etc
+		
+		2 - Variáveis devem ter nomes significativos: nomeCliente, enderecoCliente
+		
+		3 - Não podemos começar o nome de uma variável com número: let 1nome [Errado]
+		
+		4 - Não podem conter espaços ou traços: let nome cliente, let nome-cliente
+		
+		5 - Utilizamos camelCase (como está escrito): let nomeCliente (ao invés de espaços colocamo a primeira letra da próxima palvara em Maiúscula.)
+		
+		6 - O JS é case-sensitive ou seja, letras maiúsculas e minúsculas tem diferença! (let nomecliente e let nomeCliente são diferentes)
+		7 - NÃO UTILIZE VAR, UTILIZE LET
+		
+		8 - Não podemos redeclarar variáveis com LET!!!!
+		(Apenas modificá-las!)
+		
+	
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+		*** CONSTANTES COM CONST ***
+		
+	(- Variáveis constantes, que não mudam! As constantes - diferente das variáveis - quando declaradas já devem ser inicializadas
+	
+	[REGRAS NA DECLARAÇÃO DE CONSTANTES]
+	
+		1 - Não podemos criar constantes com palavras reservadas: const if, const function, etc
+		
+		2 - Constantes devem ter nomes significativos: const nomeCliente, const enderecoCliente
+		
+		3 - Não podemos começar o nome de uma constante com número: const 1nome [Errado]
+		
+		4 - Não podem conter espaços ou traços: const nome cliente, const nome-cliente
+		
+		5 - Utilizamos camelCase (como está escrito): const nomeCliente (ao invés de espaços colocamo a primeira letra da próxima palvara em Maiúscula.)
+		
+		6 - O JS é case-sensitive ou seja, letras maiúsculas e minúsculas tem diferença! (const nomecliente e const nomeCliente são diferentes)
+		
+		7 - Não podemos redeclarar variáveis com const!!!!
+		(Nem modificá-las! sempre será o mesmo valor, sendo assim só usamos const quando não precisamos alterar o valor!)
+		
+		
+	
+	O JS é uma linguagem de tipagem dinâmica, ou seja, os seus tipos já vem aos valores, seja ela string, number, boolean, etc...
+	
+	
+		
+		
+		
 	
 	
 	
