@@ -126,6 +126,34 @@ Uma vez declarada a variável é possivel modificá-la ao longo do código. Cont
 		(Apenas modificá-las!)
 		
 	
+	
+let nome = 'João';
+
+
+console.log(`${nome} nasceu em 1984.`)
+console.log(`Em 2000, ${nome} conheceu Maria.`)
+console.log(`${nome} casou-se com Maria 2012.`)
+console.log(`Maria teve um filho de ${nome} em 2015`)
+console.log(`O filho de ${nome} se chama Eduardo.`)
+
+
+
+let nome;
+
+/*
+Dará 'undefined' pois não declaramos o valor ainda.
+Ou seja, a engine do JS entende que foi declarada a variável 
+porém a mesma não foi declarada com nenhum valor.
+*/
+
+nome = 'Qualquer valor!'; // Inicializando a variável.
+console.log(nome);
+nome = 'Laurinha, isso mesmo!';
+console.log(nome);
+// let nome = "Maria" (SyntaxError: Identifier 'nome' has already been declared)
+
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
 			*** CONSTANTES COM CONST ***
@@ -154,6 +182,78 @@ Uma vez declarada a variável é possivel modificá-la ao longo do código. Cont
 	O JS é uma linguagem de tipagem dinâmica, ou seja, os seus tipos já vem aos valores, seja ela string, number, boolean, etc...
 	
 	
+	
+	
+	
+	
+	/*a constante precisa ser inicializada assim que declarada!
+
+const nome;
+
+console.log(nome) // SyntaxError: Missing initializer in const declaration
+*/
+
+/*
+const nome = 'Laura';
+console.log(nome);
+nome = 'Maria' // TypeError: Assignment to constant variable.
+*/
+
+
+
+
+	
+	
+	
+	// + - * / % **
+
+const primeiroNumero = 5;
+const segundoNumero = 10;
+const resultado = primeiroNumero * segundoNumero;
+const resultadoDuplicado = resultado * 2;
+let resultadoTriplicado = resultado * 3;
+resultadoTriplicado = resultadoTriplicado + 100;
+
+console.log(resultadoTriplicado)
+
+// Porém, agora perdemos o valor inicial do resultadoTriplicado
+
+/* 
+para garantirmos saber qual a tipagem de cada valor das constantes,
+podemos usar os seguintes comandos:
+*/
+
+console.log(typeof(primeiroNumero))
+
+/*
+Uma coisa que precisamos saber pra não termos probelmas no futuro é 
+o tipo das informações, uma vez que eu precise fazer operações com números,
+caso eu tenha uma string + um number (ex: const primeiroNumero = '5'; 
+const segundoNumero = 10;), o resultado disso seria a concatenação 
+das informações e não a soma dos números. (o resultado seria 510)
+*/
+
+
+
+const nome = 'Laura';
+const sobrenome = 'Custódio';
+const anoNasc = 1994;
+const peso = 65;
+const altura = 1.64;
+const sexo = "F"
+let idade = 2020 - anoNasc
+let imc = peso / (altura ** 2)
+
+console.log(`${nome} ${sobrenome} nasceu em ${anoNasc}. Ela 
+tem ${idade} anos, pesa ${peso} kg, tem ${altura} de altura e seu IMC é de ${imc}.`)
+
+// Como Luiz Otávio resolveu:
+
+console.log(`${nome} ${sobrenome} nasceu em ${anoNasc}.`) // Com template string
+console.log('Ela tem ', idade, 'anos, pesa', peso, 'kg,') // Com vírgula
+console.log('tem ' + altura + ' de altura e seu IMC é de ' + imc + '.') // Concatenado.
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
 		*** Let vs Var = Primeira diferença ***
@@ -196,14 +296,169 @@ Se nós criamos a variável com var, quando eu redeclaro ela, não dará problem
 		*** TIPOS PRIMITIVOS *** 
 	
 		
+const nome = 'Luiz'; // string
+const nome1 = "Luiz"; // string
+const nome2 = `Luiz`; // string (template strings)
+const num1 = 10; // number
+const num2 = 10.52; // number (em outras linguagens isso seria float)
+let nomeAluno; // undefined (indefinido) -> não aponta para lugar nenhuma na memória.
+let sobrenomeAluno = null; // nulo -> não aponta para lugar nenhuma na memória.
+
+/* 
+também poderia ser const sobrenomeAluno = null;
+apenas com undefined que precisou ser com let pois quando declaramos 
+const, ela precisa recebe um valor, não podemos declará-la depois.
+*/
+
+/*
+Há diferença entre undefined e null =>
+Null = utilizamos quando queremos desconfigurar uma variável. Ex:
+Quando o usuário pode configurar a cor de fundo do perfil dele, primeiramente
+a variável virá com o valor nulo e quando o usuário alterar a cor, a variável receberá 
+a cor 'red' por exemplo.
+
+Já com 'undefined', nós nunca atribuiremos o valor 'undefined' a variável. O JS é quem faz isso 
+altomaticamente quando a variável não recebe nenhum valor. (Será atribuido um valor no futuro
+mas a variável já foi declarada.)
+*/
+
+const aprovado = true; // or false (boolean valor - valor lógico)
+/*
+Sempre que usamos o 'boolean', queremos mudar o fluxo da aplicação, (fazemos um desvio condicional)
+ou seja
+if 'true' => faça isso / else => faça aquilo
+*/
+
+/* Para verificar os tipos usamos typeof e se quisermos ver o valor, 
+colocamos o nome da variável em seguida */
+
+console.log(typeof nomeAluno, nomeAluno) // tipo é undefined e valor também é undefined.
+console.log(typeof sobrenomeAluno, sobrenomeAluno) // bug, porque o JS retorna o tipo como objeto, porém não é!
+
+
+
+
+// DADOS PASSADO POR REFERENCIA x DADOS PRIMITIVOS
+
+const a = [1,2];
+const b = a; // ambas terão o mesmo valor
+
+console.log(a, b); // [1,2][1,2]
+
+b.push(3);
+console.log(a, b); // [1,2,3][1,2,3]
+
+/* 
+Criamos uma variavel a, depois criamos uma variável b
+E fiz o valor de b apontar para o mesmo local da memoria de a, por isso 
+ambas as variáveis ficaram com o mesmo valor, mesmo dando push apenas em b
+*/
+
+// Quando fazemos o seguinte:
+let c = 2;
+let d = c; // estamos literalmente copiando valor de c em d. (Não é uma referencia, é uma cópia)
+
+console.log(c,d) // 2,2
+
+c = 3;
+
+console.log(c,d) // 3,2
 
 
 	
 	
+-------------------------------------------------------------------------------------------------------------------------------------------------
+	
+		*** OPERADORES ARITMÉTICOS, DE ATRIBUIÇÃO E INCREMENTO ***
+		
+		
+
+// ARITMÉTICOS
+
+// + => ADIÇÃO, CONCATENAÇÃO (JUNÇÃO DE DOIS VALORES)
+// - / * => SUBTRAÇÃO, DIVISÃO E MULTIPLICAÇÃO
+// ** => POTENCIAÇÃO
+// % => RESTO DA DIVISÃO
+
+const num1 = 10;
+const num2 = 2;
+
+console.log(num1 + num2);
+console.log(num1 - num2);
+console.log(num1 * num2);
+console.log(num1 / num2);
+console.log(num1 ** num2);
+console.log(num1 % num2);
+
+// ORDEM DE PRECEDENCIA:
+
+/* 
+1° -> ()
+2° -> **
+3° -> * / %
+4° -> + - 
+*/
+
+// INCREMENTO
+
+let contador = 1;
+contador ++;
+
+console.log(contador); // 2 (1++  => 1+1 = 2)
+
+/* ou decremento (--) e ainda pode ser pré ou pós, assim: contador++ ou ++contador => 
+ dependendo do que você fizer o resultados será diferente! FIQUE ATENTO NISSO!
+ 
+ Nan - Not a Number */
+
+
+ // DE ATRIBUIÇÃO
+
+/*
++= MAIS IGUAL
+-= MENOS IGUAL
+*= VEZES IGUAL
+/= DIVIDIDO IGUAL
+**= ELEVADO IGUAL
+*/
+
+/* 
+A partir dos exemplos acima/;
+    let num1 = 10;
+    let num2 = '5';
+    
+Toda conta, deve ser executada com numbers, caso eu tente fazer uma conta com 
+uma string e um number, para adição, retornará uma concatenação. Ex: 105 (que seria 10 e 5);
+para multiplicação, retornará 50 (o JS consegur resolver isso: retira a string e transforma em número).
+Toda vez que eu colocar alguma coisa entre parenteses
+eu to pedindo apra que alguma ação seja executada naquele valor específico 
+logo, se eu quiser ter certeza de que será feito uma conta com uma string eu posso fazer o seguinte:
+
+    let num1 = 10;
+    let num2 = parseInt('5'); // transformará em número inteiro; ou usamos parseFloat para numeros com casas decimais.
+        (ou usamos parseFloat para números com casas decimais.) 
+    pedindo para mostrar na tela
+        console.log(num1 + num2) => 15.
+
+        Tem ainda a maneira generica que não tem diferença entre inteiro ou decimal que é o Number
+
+        então ficaria assim: 
+            let num2 = Number('5') ou
+            let num2 = Number('5.2')
+                darão => 15 ou
+                         15.2
+*/
+
+
+
 	
 	
-	
-	
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+		*** ALERT, CONFIRM E PROMPT ***
+		
+		
+
 	
 	
 	

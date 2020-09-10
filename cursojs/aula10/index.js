@@ -1,38 +1,75 @@
-const nome = 'Luiz'; // string
-const nome1 = "Luiz"; // string
-const nome2 = `Luiz`; // string (template strings)
-const num1 = 10; // number
-const num2 = 10.52; // number (em outras linguagens isso seria float)
-let nomeAluno; // undefined (indefinido) -> não aponta para lugar nenhuma na memória.
-let sobrenomeAluno = null; // nulo -> não aponta para lugar nenhuma na memória.
+// ARITMÉTICOS
+
+// + => ADIÇÃO, CONCATENAÇÃO (JUNÇÃO DE DOIS VALORES)
+// - / * => SUBTRAÇÃO, DIVISÃO E MULTIPLICAÇÃO
+// ** => POTENCIAÇÃO
+// % => RESTO DA DIVISÃO
+
+const num1 = 10;
+const num2 = 2;
+
+console.log(num1 + num2);
+console.log(num1 - num2);
+console.log(num1 * num2);
+console.log(num1 / num2);
+console.log(num1 ** num2);
+console.log(num1 % num2);
+
+// ORDEM DE PRECEDENCIA:
 
 /* 
-também poderia ser const sobrenomeAluno = null;
-apenas com undefined que precisou ser com let pois quando declaramos 
-const, ela precisa recebe um valor, não podemos declará-la depois.
+1° -> ()
+2° -> **
+3° -> * / %
+4° -> + - 
 */
+
+// INCREMENTO
+
+let contador = 1;
+contador ++;
+
+console.log(contador); // 2 (1++  => 1+1 = 2)
+
+/* ou decremento (--) e ainda pode ser pré ou pós, assim: contador++ ou ++contador => 
+ dependendo do que você fizer o resultados será diferente! FIQUE ATENTO NISSO!
+ 
+ Nan - Not a Number */
+
+
+ // DE ATRIBUIÇÃO
 
 /*
-Há diferença entre undefined e null =>
-Null = utilizamos quando queremos desconfigurar uma variável. Ex:
-Quando o usuário pode configurar a cor de fundo do perfil dele, primeiramente
-a variável virá com o valor nulo e quando o usuário alterar a cor, a variável receberá 
-a cor 'red' por exemplo.
-
-Já com 'undefined', nós nunca atribuiremos o valor 'undefined' a variável. O JS é quem faz isso 
-altomaticamente quando a variável não recebe nenhum valor. (Será atribuido um valor no futuro
-mas a variável já foi declarada.)
++= MAIS IGUAL
+-= MENOS IGUAL
+*= VEZES IGUAL
+/= DIVIDIDO IGUAL
+**= ELEVADO IGUAL
 */
 
-const aprovado = true; // or false (boolean valor - valor lógico)
-/*
-Sempre que usamos o 'boolean', queremos mudar o fluxo da aplicação, (fazemos um desvio condicional)
-ou seja
-if 'true' => faça isso / else => faça aquilo
+/* 
+A partir dos exemplos acima/;
+    let num1 = 10;
+    let num2 = '5';
+    
+Toda conta, deve ser executada com numbers, caso eu tente fazer uma conta com 
+uma string e um number, para adição, retornará uma concatenação. Ex: 105 (que seria 10 e 5);
+para multiplicação, retornará 50 (o JS consegur resolver isso: retira a string e transforma em número).
+Toda vez que eu colocar alguma coisa entre parenteses
+eu to pedindo apra que alguma ação seja executada naquele valor específico 
+logo, se eu quiser ter certeza de que será feito uma conta com uma string eu posso fazer o seguinte:
+
+    let num1 = 10;
+    let num2 = parseInt('5'); // transformará em número inteiro; ou usamos parseFloat para numeros com casas decimais.
+        (ou usamos parseFloat para números com casas decimais.) 
+    pedindo para mostrar na tela
+        console.log(num1 + num2) => 15.
+
+        Tem ainda a maneira generica que não tem diferença entre inteiro ou decimal que é o Number
+
+        então ficaria assim: 
+            let num2 = Number('5') ou
+            let num2 = Number('5.2')
+                darão => 15 ou
+                         15.2
 */
-
-/* Para verificar os tipos usamos typeof e se quisermos ver o valor, 
-colocamos o nome da variável em seguida */
-
-console.log(typeof nomeAluno, nomeAluno) // tipo é undefined e valor também é undefined.
-console.log(typeof sobrenomeAluno, sobrenomeAluno) // bug, porque o JS retorna o tipo como objeto, porém não é!

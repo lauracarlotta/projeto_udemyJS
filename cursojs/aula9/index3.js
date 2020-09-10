@@ -3,10 +3,10 @@
 const a = [1,2];
 const b = a; // ambas terão o mesmo valor
 
-console.log(a, b);
+console.log(a, b); // [1,2][1,2]
 
 b.push(3);
-console.log(a, b);
+console.log(a, b); // [1,2,3][1,2,3]
 
 /* 
 Criamos uma variavel a, depois criamos uma variável b
