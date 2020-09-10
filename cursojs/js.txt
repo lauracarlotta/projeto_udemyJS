@@ -1,5 +1,5 @@
 	
-	*** CONSOLE.LOG ***
+		*** CONSOLE.LOG ***
 
 
 console.log(""); => Dentro do parenteses podemos colocar uma variável, objeto, valores literais, etc /* Não é função! é um método que chama log que esta dentro do objeto console*//* Ponto e virgula é opcional no fim de cada linha*/
@@ -19,7 +19,7 @@ JS é uma linguagem de tipagem dinâmica;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
-	*** COMENTARIOS *** 
+		*** COMENTARIOS *** 
 	
 // -> comentário de uma linha
 
@@ -32,7 +32,7 @@ JS é uma linguagem de tipagem dinâmica;
 	
 -------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	*** NAVEGADOR vs NODEjs (HTML + JS)***
+		*** NAVEGADOR vs NODEjs (HTML + JS)***
 	
 (Ctrl+u = mostra o código fonte da página)
 
@@ -89,7 +89,7 @@ JS é uma linguagem de tipagem dinâmica;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
-		*** Variáveis com let ***
+			*** Variáveis com let ***
 	
 	
 Variáveis = espaço de armazenamento na memória
@@ -128,7 +128,7 @@ Uma vez declarada a variável é possivel modificá-la ao longo do código. Cont
 	
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
-		*** CONSTANTES COM CONST ***
+			*** CONSTANTES COM CONST ***
 		
 	(- Variáveis constantes, que não mudam! As constantes - diferente das variáveis - quando declaradas já devem ser inicializadas
 	
@@ -154,10 +154,50 @@ Uma vez declarada a variável é possivel modificá-la ao longo do código. Cont
 	O JS é uma linguagem de tipagem dinâmica, ou seja, os seus tipos já vem aos valores, seja ela string, number, boolean, etc...
 	
 	
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+		*** Let vs Var = Primeira diferença ***
 		
 		
 		
 	
+Se nós criamos a variável com var, quando eu redeclaro ela, não dará problemas. Contudo, com o let teríamos um erro.
+
+
+	// ECMAScript 2015 (ES6) => padronização do JS
+
+	var nome = "Luiz";
+	var nome = "Otávio"; // com let isso geraria um erro*
+
+	console.log(nome)
+
+	/* Podemos ainda fazer da seguinte forma:
+
+	nome = "Laura"; // sem let ou var
+
+	NÃO FAÇA ISSO!! Isso gerará uma variável global que poderá causar problemas em outras variáveis
+	do código. Então sempre especifique se a variável será criada com var, let ou const. Isso evitará
+	problemas no futuro. (Já banimos o var do nosso código) então seria com const ou let.
+
+	*/
+
+	// Com let seria assim:
+	let nomeAluno = "Laura";
+	// Para redeclarar, não adicionamos o let, só o nome da variável.
+	nomeAluno = "Wellington";
+
+	console.log(nomeAluno)
+
+
+
+		
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+		*** TIPOS PRIMITIVOS *** 
+	
+		
+
+
 	
 	
 	
